@@ -375,25 +375,6 @@ footer p:first-child {
     }
 }
 
-@media (max-width: 500px) {
-
-    .section {
-        width: 94%;
-        padding: 70px 0;
-    }
-
-    .status {
-        gap: 8px;
-    }
-
-    .game-menu {
-        padding: 12px 8px;
-    }
-
-    .game-menu a {
-        font-size: 0.7rem;
-    }
-
     /* =========================================
    RESPONSIVIDADE - CELULAR
 ========================================= */
@@ -587,4 +568,3 @@ footer p:first-child {
     .hero-content {
         animation: borderPulse 2.5s ease-in-out infinite;
     }
-}
