@@ -568,3 +568,21 @@ footer p:first-child {
     .hero-content {
         animation: borderPulse 2.5s ease-in-out infinite;
     }
+
+@keyframes floatItem {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.achievement-icon {
+    display: inline-block; /* Necessário para o transform funcionar */
+    animation: floatItem 3s ease-in-out infinite;
+}
+
+/* Ajusta o GIF do lado do título */
+.title-gif {
+    width: 150px; /* Deixa bem pequeno, do tamanho do texto */
+    height: auto;
+    image-rendering: pixelated; /* Mantém o aspecto de 8-bits */
+}
+
