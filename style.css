@@ -585,4 +585,301 @@ footer p:first-child {
     height: auto;
     image-rendering: pixelated; /* Mantém o aspecto de 8-bits */
 }
+/* =========================================
+   AJUSTES PARA CELULARES
+========================================= */
+
+@media (max-width: 500px) {
+
+    /* Tela inicial */
+
+    .hero {
+        padding: 35px 12px;
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        padding: 35px 15px;
+    }
+
+    .hero h1 {
+        font-size: clamp(1.7rem, 8vw, 2.5rem);
+        letter-spacing: 1px;
+        overflow-wrap: break-word;
+    }
+
+    .role {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+
+    /* Barras HP e XP */
+
+    .status-box {
+        margin: 30px auto;
+    }
+
+    .status {
+        gap: 8px;
+        font-size: 0.85rem;
+    }
+
+    .status > span:first-child {
+        width: 22px;
+    }
+
+    .status > span:last-child {
+        width: 42px;
+    }
+
+    .bar {
+        min-width: 0;
+        height: 16px;
+    }
+
+
+    /* Botão */
+
+    .start-button {
+        padding: 12px 24px;
+    }
+
+
+    /* Menu */
+
+    .game-menu {
+        gap: 4px;
+    }
+
+    .game-menu a {
+        padding: 6px 8px;
+        font-size: 0.65rem;
+    }
+
+
+    /* Painéis e títulos */
+
+    .panel {
+        padding: 20px;
+    }
+
+    .section-title h2 {
+        font-size: 1.2rem;
+        letter-spacing: 1px;
+    }
+
+}
+/* =========================================
+   MENU DE SEÇÕES - ESTILO GAME
+========================================= */
+
+/* Número de cada seção */
+
+.section-title span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 38px;
+    height: 38px;
+
+    border: 1px solid #00e5ff;
+    background: #101820;
+
+    color: #00e5ff;
+    font-size: 0.9rem;
+}
+
+
+/* Linha decorativa ao lado do título */
+
+.section-title {
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+
+    flex: 1;
+    height: 1px;
+
+    background: linear-gradient(
+            to right,
+            #7dff00,
+            transparent
+    );
+
+    margin-left: 15px;
+}
+
+
+/* =========================================
+   SKILLS - INVENTÁRIO DE HABILIDADES
+========================================= */
+
+.skills-grid .panel {
+    border-top: 2px solid #00e5ff;
+}
+
+.skills-grid .panel h3 {
+    color: #00e5ff;
+}
+
+
+/* Habilidades como itens de inventário */
+
+.skills-grid .panel p {
+    cursor: default;
+    transition: 0.2s ease;
+}
+
+.skills-grid .panel p:hover {
+    color: #7dff00;
+    border-color: #7dff00;
+    background: #171f12;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 0 10px rgba(125, 255, 0, 0.15);
+}
+
+
+/* =========================================
+   QUEST LOG - MISSÕES
+========================================= */
+
+.quest {
+    position: relative;
+    overflow: hidden;
+
+    border-left: 4px solid #7dff00;
+
+    background: linear-gradient(
+            110deg,
+            #151b13,
+            #111119 65%
+    );
+}
+
+
+/* Identificação da missão */
+
+.quest-header h3 {
+    margin-bottom: 0;
+}
+
+.quest-status {
+    white-space: nowrap;
+    letter-spacing: 1px;
+    background: rgba(125, 255, 0, 0.08);
+}
+
+
+/* Destaque ao passar o mouse */
+
+.quest:hover {
+    border-color: #7dff00;
+
+    box-shadow:
+            0 0 20px rgba(125, 255, 0, 0.12);
+}
+
+
+/* =========================================
+   ACHIEVEMENTS - CONQUISTAS
+========================================= */
+
+.achievement {
+    position: relative;
+    overflow: hidden;
+
+    border-bottom: 2px solid #383844;
+
+    transition:
+            transform 0.25s ease,
+            border-color 0.25s ease,
+            box-shadow 0.25s ease;
+}
+
+
+/* Conquista em destaque ao passar o mouse */
+
+.achievement:hover {
+    transform: translateY(-6px);
+
+    border-color: #7dff00;
+
+    box-shadow:
+            0 8px 25px rgba(125, 255, 0, 0.1);
+}
+
+
+/* Ícone da conquista */
+
+.achievement-icon {
+    transition:
+            transform 0.25s ease,
+            text-shadow 0.25s ease;
+}
+
+.achievement:hover .achievement-icon {
+    transform: scale(1.15);
+
+    text-shadow:
+            0 0 15px rgba(125, 255, 0, 0.65);
+}
+
+
+/* Títulos das conquistas */
+
+.achievement h3 {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.achievement small {
+    display: block;
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   CONTATO - LINKS
+========================================= */
+
+.contact a {
+    display: inline-block;
+    transition:
+            color 0.2s ease,
+            transform 0.2s ease;
+}
+
+.contact a:hover {
+    color: #7dff00;
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   ACESSIBILIDADE
+========================================= */
+
+/* Respeita quem prefere menos animações */
+
+@media (prefers-reduced-motion: reduce) {
+    .skills-grid .panel p,
+    .achievement,
+    .achievement-icon,
+    .contact a {
+        transition: none;
+    }
+
+    .skills-grid .panel p:hover,
+    .achievement:hover,
+    .achievement:hover .achievement-icon,
+    .contact a:hover {
+        transform: none;
+    }
+}
 
